@@ -60,6 +60,12 @@ app.get("/about", (req,res) => {
     });
 });
 
+// control project
+app.get("/project", (req,res) => {
+    res.render('project.hbs', {
+        pageTitle: 'PORTFOLIO',
+    });
+});
 
 // control bad
 app.get("/bad", (req,res) => {
