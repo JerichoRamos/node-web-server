@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -44,7 +45,7 @@ hbs.registerHelper('screamIt', (text) => {
 
 
 // control home
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'TOFU',
         welcome: 'try it'
@@ -69,8 +70,8 @@ app.get("/bad", (req,res) => {
 
 
 // connect to web-server localhost:3000
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
     
 });
 
